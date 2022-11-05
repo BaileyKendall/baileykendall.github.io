@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Code';
-    src: url('https://freshradio.pw/assets/css/Code-Bold.woff2') format('woff2'),
-        url('https://freshradio.pw/assets/css/Code-Bold.woff') format('woff');
+    src: url('https://freshxmas.pw/assets/css/Code-Bold.woff2') format('woff2'),
+        url('https://freshxmas.pw/assets/css/Code-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -107,8 +107,8 @@ marquee {
 
 header {
   height: 100%;
-  background: url("https://freshradio.pw/images/CHRISTMAS%20BG.png");
-  background: url("https://freshradio.pw/images/CHRISTMAS%20BG.png");
+  background: url("https://freshxmas.pw/images/CHRISTMAS%20BG.png");
+  background: url("https://freshxmas.pw/images/CHRISTMAS%20BG.png");
   position: relative;
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
