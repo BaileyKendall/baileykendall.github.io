@@ -1,3 +1,12 @@
+let getID = id => document.getElementById(id) || undefined;
+
+window.onload = () => {
+  console.log("THIS IS A TEST KTHX");
+  updateStats();
+  setInterval(updateStats, 5000);
+}
+
+
 var audioPlayer = new Audio(radioStreamLink),
   isPlaying = !1,
   isVolOpen = !1,
@@ -30,32 +39,7 @@ function pause() {
     '<i class="fa fa-play-circle"></i>'),
     audioPlayer.pause();
 }
-function updateStats() {
-  $.get(
-    "" +
-      new Date().getTime(),
-    a => {
-      let {
-        now_playing: np,
-        live: { streamer_name: dj, is_live: live },
-        listeners: { unique: listeners }
-      } = a;
-      let { song } = np;
-      $("#dj").html(live ? "DJ " + dj : "Gravity Stream");
-      $("#djmessage").html("Broken rn");
-      $("#listeners").html(`${listeners} listeners`);
-      console.log(`${song.title} - ${song.artist}`);
-      $("#song").html(`${song.title}`);
-      $("#artist").html(`${song.artist}`);
-    }
-  );
-}
 
-updateStats();
-
-
-
-setInterval(updateStats, 5 * 1000);
 
 (audioPlayer.crossOrigin = "anonymous"),
   (volumeSlider.oninput = function() {
@@ -65,3 +49,21 @@ setInterval(updateStats, 5 * 1000);
 
 
   renderFrame();
+
+  function updateStats() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        let data = JSON.parse(this.responseText);
+        let dj = data.live.is_live ? data.live.streamer_name : "AutoDJ";
+        if (dj !== "AutoDJ") {
+          getID("dj").style.left = "28";
+        }
+        getID("title").innerHTML = data.now_playing.song.title;
+        getID("artist").innerHTML = data.now_playing.song.artist;
+        getID("listeners").innerHTML = data.listeners.current;
+      }
+    };
+    xhttp.open("GET", "https://dorothy.azuraca.st/api/nowplaying/17", true);
+    xhttp.send();
+  }
