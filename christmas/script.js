@@ -55,12 +55,13 @@ function pause() {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         let data = JSON.parse(this.responseText);
-        let dj = data.live.is_live ? data.live.streamer_name : "AutoDJ";
-        if (dj !== "AutoDJ") {
-          getID("dj").style.left = "28";
+        let dj = data.live.is_live ? data.live.streamer_name : "Non-Stop Christmas";
+        if (dj !== "Non-Stop Christmas") {
+          getID("dj").style.left = "0";
         }
         getID("title").innerHTML = data.now_playing.song.title;
         getID("artist").innerHTML = data.now_playing.song.artist;
+        getID("dj").innerText = dj;
         getID("listeners").innerHTML = data.listeners.current;
       }
     };
