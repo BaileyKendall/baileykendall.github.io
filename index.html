@@ -1,1 +1,67 @@
-<meta http-equiv="Refresh" content="0; url='https://freshxmas.pw/christmas/'" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GBRadio &bull; The Home of British Music</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
+  </head>
+  <body>
+    <header>
+       <div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+  </div>
+  
+  
+  
+</div>
+      <div class="container player-wrap">
+        <div class="song">
+          <div>
+
+            <center><img src="https://cdn.glitch.global/131639fc-5519-4564-bc38-c1124f56dcc6/gbnradiosite.png?v=1690245644129" style="width:300px;height:300px;border-radius:100%;"></center>
+            </div>
+          <a id="title" class="Title"></a>
+          <div id="artist" class="Artist"></div>
+          <div class="Listeners"><i class="fas fa-microphone"></i>&nbsp; <span id="dj"></span> </div>
+        </div>
+        <div class="player">
+          <div
+            style="margin-bottom: -2.25px;"
+            id="playpause"
+            onclick="playPauseClick();">
+            <i class="fas fa-play-circle"></i>
+          </div>
+          <input
+            type="range"
+            id="volslider"
+            min="0"
+            max="100"
+            value="50"
+            class="slider"
+          />
+        </div>
+      </div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      var radioStreamLink =
+        "https://ascella.streamerr.co/listen/gbradio/radio.mp3";
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
