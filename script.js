@@ -39,6 +39,14 @@ function updateStats() {
   });
 }
 
+(audioPlayer.crossOrigin = "anonymous"),
+  (volumeSlider.oninput = function() {
+    audioPlayer.volume = this.value / 100;
+  }),
+  updateStats(),
+
+
+	
 $(window).ready(function () {
 	updateStats();
 	setInterval(updateStats, 5000);
