@@ -1,12 +1,12 @@
 const changePage = (pagename) => {
-  window.location.hash = `#/Fresh.${pagename}`;
+  window.location.hash = `#/GBR.${pagename}`;
   checkPage();
 };
 
 const checkPage = () => {
   const { hash } = window.location;
   if (hash) {
-    const pagename = hash.split(/\/fresh\./gi)[1];
+    const pagename = hash.split(/\/gbr\./gi)[1];
     if (pagename) {
       $.get(`/assets/html/pages/${pagename.toLowerCase()}.html`)
       .fail((err) => {
@@ -16,7 +16,7 @@ const checkPage = () => {
         let content = res.split('\n'),
             title = content.shift();
         content = content.join('\n');
-        $('.title').text(`Fresh &bullet; ${title}`);
+        $('.title').text(`GBRadio &bullet; ${title}`);
         $('.page-content').html(content);
         $('.nav-link').removeClass('active');
         $(`.nav-link[href="${hash}"]`).addClass('active');
